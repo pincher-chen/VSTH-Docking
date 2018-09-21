@@ -1,7 +1,7 @@
 # VSTH-Docking
 
-development version: http://172.16.23.111:8008/Myjob.html   \\   
-production version: http://172.16.23.111:8009/Myjob.html   \\ 
+development version: http://172.16.23.111:8008/Myjob.html      
+production version: http://172.16.23.111:8009/Myjob.html    
 
 ## To Do List.
 ### for front-web
