@@ -12,8 +12,7 @@
 
 ### for back-end
 
-- 1.Tt is too slow when submit a job.
-Reason:
+- 1.Tt is too slow when submit a job. Reason for:
 ```
 &{/usr/bin/scp [scp -i /home/chenp/bin/nscc-gz_pinchen.id /data/chenp/code/src/vsth/data/HPVS/ligands/CHEMBL1934618.sdf nscc-gz_pinchen@10.127.48.1:/HOME/nscc-gz_pinchen/WORKSPACE/HHVSF/data/ligands/CHEMBL1934618.sdf] []  <nil> <nil> <nil> [] <nil> <nil> <nil> <nil> <nil> false [] [] [] [] <nil> <nil>}
 
