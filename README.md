@@ -12,6 +12,10 @@ The original VSTH web-server has included the workflow of molecule docking metho
      + delete waters
      + fill in missing side chains
      + .....
+     Besides, It is better to get pdb form PDB web site, the method of obtaining protein can be implemented as follows:
+     ```
+     wget https://files.rcsb.org/download/6czj.pdb
+     ```
 - 2. Add the step of "setting target box size". Three types of size are supportted.
      + recommand by vsth, the default target box size has prepared in database. But, only few proteins are supportted.
      + calculated by predicted softares, like fpocket, sitemap, etc. It will be better that the target sites can be viewed on web.
