@@ -3,7 +3,7 @@
 development version: http://172.16.23.111:8008/Myjob.html      
 production version: http://172.16.23.111:8009/Myjob.html    
 
-The original VSTH webser has included the workflow of molecule docking method. However, this workflow is preliminary and needs to be improved. The following points need to be completed.
+The original VSTH web-server has included the workflow of molecule docking method. However, this workflow is preliminary and needs to be improved. The following points need to be completed.
 - 1. Allow users upload protein. The proteins in PDBbind refined-set are supportted in current version, which limits the versatility of VSTH web-server. It needs to check the format of protein files, the preprocess like:
      + assign bond orders
      + add/remove origin hydrogens
