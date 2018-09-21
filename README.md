@@ -12,7 +12,19 @@ The original VSTH webser has included the workflow of molecule docking method. H
      + delete waters
      + fill in missing side chains
      + .....
-- 2. Add the step of "setting target box size".
+- 2. Add the step of "setting target box size". Three types of size are supportted.
+     + recommand by vsth, the default target box size has prepared in database. But, only few proteins are supportted.
+     + calculated by predicted softares, like fpocket, sitemap, etc. It will be better that the target sites can be viewed on web.
+     + user defined.
+- 3. Add more docking softwares. In current version, only Autodock Vina is supportted. Some softares are prepared to add into VSTH in order:
+     + schrodinger. Here, only glide module is considered. We will search more info. about how to submit glide job by command.
+     + LeDock. This will by easy, for ledock has the same IO files as Vina.
+     + AutoDock. 
+     + GalaxyDock.
+     + iDock.
+     + UCSF Dock. I am not sure why the target site do not support.
+     + rDock.
+     + iGEMDOCK.
 
 ## To Do List.
 ### for front-web
@@ -46,3 +58,9 @@ There three steps when a job is finished:
 - 1.Scp data from back-end to HPC cluster.
 - 2.Submit job by remote ssh command.
 - 3.Update running job when redirect to myJob.html.
+
+Method:
+分解每一步，让用户知道时间花在什么地方
+- 1. 第一步给出上传提示-“正在上传文件”
+- 2. 第二步给出提交提示-“正在提交作业”
+- 3. 第三步有点多余，刚提交的作业不应该更新。目前网页刷新是遍历每个作业，检查是否是running状态，是的话则执行跟新。需要重新设置策略，刷新作业列表的时候，只刷新每个作业条目，而不是整个网页，这样就不会出现等待刷新完每个作业后才出现网页。
