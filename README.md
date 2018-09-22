@@ -1,6 +1,6 @@
 # VSTH-Docking
 
-development version: http://172.16.23.111:8008/Myjob.html      
+debug version: http://172.16.23.111:8008/Myjob.html      
 production version: http://172.16.23.111:8009/Myjob.html    
 
 The original VSTH web-server has included the workflow of molecule docking method. However, this workflow is preliminary and needs to be improved. The following points need to be completed.
