@@ -69,3 +69,17 @@ Method:
 - 1. 第一步给出上传提示-“正在上传文件”
 - 2. 第二步给出提交提示-“正在提交作业”
 - 3. 第三步有点多余，刚提交的作业不应该更新。目前网页刷新是遍历每个作业，检查是否是running状态，是的话则执行跟新。需要重新设置策略，局部刷新，即刷新作业列表的时候，只刷新每个作业条目，而不是整个网页，这样就不会出现等待刷新完每个作业后才出现网页。
+
+
+需要的API：
+- 1.step1如果选择Target selection，点击next按钮会向后台传输Json类型数据，例如：
+“{"Type":2,"Target":"1B56","jobId":"aef87907_2090_0a46_ed21_c9c90effdb50"}”；
+如果选择Template upload，点击next按钮会向后台传输Formdata类型数据，包含jobid和用户上传的file文件；
+需要一个后台API用来接收step1点击next按钮后传输的数据。
+
+- 2.根据step1向后台传输的PDB的相关信息，在step2当中通过相应的API向页面返回对应的坐标数据：
+（1）如果选择recommend，点击load按钮后，需要一个API向前端页面返回Size_(x ,y ,z)、Center_(x ,y ,z) 和Num_modes，以Json的格式返回；
+（2）如果选择calculated，点击绿色字体Calculate后，需要一个API向前端页面返回一系列的Size_(x ,y ,z)和Center_(x ,y ,z)显示在Target-size下拉菜单当中以供用户选择，以Json格式返回；
+（3）如果选择user-defined，则用户自己填写坐标信息不需要API返回数据。
+
+- 3.当用户在step1~4都选择填写好信息之后，点击submit按钮会将所有信息提交到后台，此时需要一个API来接收所有的数据并处理，所有数据都是Json类型或者Formdata类型的数据。
