@@ -74,12 +74,13 @@ Method:
 需要的API：
 - 1.step1如果选择Target selection，点击next按钮会向后台传输Json类型数据，例如：
 “{"Type":2,"Target":"1B56","jobId":"aef87907_2090_0a46_ed21_c9c90effdb50"}”；
-如果选择Template upload，点击next按钮会向后台传输Formdata类型数据，包含jobid和用户上传的file文件；
+如果选择Template upload，点击next按钮会向后台传输Formdata类型数据，包含jobid和用户上传的file文件，例如：{"Type":2,"Target":"","jobId":"1e6cded9_c008_1782_722f_5479ce907029"}和File(143694)；
 需要一个后台API用来接收step1点击next按钮后传输的数据。
 
 - 2.根据step1向后台传输的PDB的相关信息，在step2当中通过相应的API向页面返回对应的坐标数据：
-（1）如果选择recommend，点击load按钮后，需要一个API向前端页面返回Size_(x ,y ,z)、Center_(x ,y ,z) 和Num_modes，以Json的格式返回；
-（2）如果选择calculated，点击绿色字体Calculate后，需要一个API向前端页面返回一系列的Size_(x ,y ,z)和Center_(x ,y ,z)显示在Target-size下拉菜单当中以供用户选择，以Json格式返回；
+（1）如果选择recommend，点击load按钮后，需要一个API向前端页面返回Size_(x ,y ,z)、Center_(x ,y ,z) 和Num_modes，以Json的格式返回，例如：{"Size_(x ,y ,z)":"10,20,30","Center_(x ,y ,z)":"10,20,30","Num_modes":"10"}；
+（2）如果选择calculated，点击绿色字体Calculate后，需要一个API向前端页面返回一系列的Size_(x ,y ,z)、Center_(x ,y ,z)和Scores显示在Target-size下拉菜单当中以供用户选择，以Json格式返回，例如：
+{"pockets":[{"score":10,"size_x":10,"size_y":20,"size_z":30,"center_x":10,"center_y":20,"center_z":30},{"score":20,"size_x":10,"size_y":20,"size_z":30,"center_x":10,"center_y":20,"center_z":30}]}
 （3）如果选择user-defined，则用户自己填写坐标信息不需要API返回数据。
 
 - 3.当用户在step1~4都选择填写好信息之后，点击submit按钮会将所有信息提交到后台，此时需要一个API来接收所有的数据并处理，所有数据都是Json类型或者Formdata类型的数据。
